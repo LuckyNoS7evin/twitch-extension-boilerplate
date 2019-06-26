@@ -1,11 +1,13 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import extension from "./modules/extension";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { ExtensionPlugin } from 'twitchext-vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  modules: {
-    extension
-  }
+const store = new Vuex.Store({
+
 });
+
+Vue.use(ExtensionPlugin, { store });
+
+export default store;
